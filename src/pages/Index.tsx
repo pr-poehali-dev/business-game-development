@@ -154,37 +154,44 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-        <div className="container mx-auto px-4 py-4">
+      <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-200/50 z-50 shadow-sm">
+        <div className="container mx-auto px-4 py-5">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold text-primary">BUSINESS GAMES STORE</h1>
+            <h1 className="text-xl font-bold text-primary tracking-tight">BUSINESS GAMES STORE</h1>
             <div className="hidden md:flex gap-8">
-              <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-accent transition-colors">Главная</button>
-              <button onClick={() => scrollToSection('catalog')} className="text-sm font-medium hover:text-accent transition-colors">Каталог игр</button>
-              <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-accent transition-colors">О нас</button>
-              <button onClick={() => scrollToSection('authors')} className="text-sm font-medium hover:text-accent transition-colors">Авторы</button>
-              <button onClick={() => scrollToSection('contact')} className="text-sm font-medium hover:text-accent transition-colors">Контакты</button>
+              <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">Главная</button>
+              <button onClick={() => scrollToSection('catalog')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">Каталог игр</button>
+              <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">О нас</button>
+              <button onClick={() => scrollToSection('authors')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">Авторы</button>
+              <button onClick={() => scrollToSection('contact')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">Контакты</button>
             </div>
-            <Button onClick={() => scrollToSection('order')} className="hidden md:block">
+            <Button onClick={() => scrollToSection('order')} className="hidden md:block shadow-lg hover:shadow-xl transition-all">
               Заказать игру
             </Button>
           </div>
         </div>
       </nav>
 
-      <section id="home" className="pt-32 pb-20 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container mx-auto px-4">
+      <section id="home" className="relative pt-40 pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-accent/80"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)] opacity-50"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-5xl font-bold mb-6 animate-fade-in">Бизнес-игры для развития команды</h2>
-            <p className="text-xl mb-8 opacity-90">
+            <div className="inline-block mb-6 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium animate-fade-in">
+              ✨ Профессиональное обучение через игру
+            </div>
+            <h2 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in leading-tight">
+              Бизнес-игры для развития команды
+            </h2>
+            <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
               Превратите обучение в захватывающий процесс с мгновенными результатами. Практика вместо теории.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button onClick={() => scrollToSection('catalog')} size="lg" variant="secondary" className="gap-2">
+              <Button onClick={() => scrollToSection('catalog')} size="lg" variant="secondary" className="gap-2 shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
                 <Icon name="PlayCircle" size={20} />
                 Смотреть каталог
               </Button>
-              <Button onClick={() => scrollToSection('order')} size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
+              <Button onClick={() => scrollToSection('order')} size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm shadow-xl hover:scale-105 transition-all">
                 Заказать игру
               </Button>
             </div>
@@ -192,19 +199,22 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="catalog" className="py-20 bg-gray-50">
+      <section id="catalog" className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Каталог игр</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Профессиональные бизнес-игры для развития навыков переговоров, стратегического мышления и командной работы
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Каталог игр</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Профессиональные бизнес-игры для развития навыков переговоров, стратегического мышления и командной работы
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {games.map((game) => (
-              <Card key={game.id} className="hover:shadow-xl transition-shadow duration-300">
-                <CardHeader className="bg-primary text-white">
-                  <CardTitle className="text-2xl">{game.title}</CardTitle>
-                  <CardDescription className="text-white/80">{game.description}</CardDescription>
+            {games.map((game, idx) => (
+              <Card key={game.id} className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg overflow-hidden group" style={{ animationDelay: `${idx * 100}ms` }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="relative bg-gradient-to-br from-primary to-primary/90 text-white">
+                  <CardTitle className="text-2xl mb-2">{game.title}</CardTitle>
+                  <CardDescription className="text-white/90 leading-relaxed">{game.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-6 space-y-6">
                   <div className="flex justify-between items-center border-b pb-4">
@@ -254,13 +264,13 @@ const Index = () => {
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {game.target.map((t, idx) => (
-                        <span key={idx} className="text-xs bg-secondary px-3 py-1 rounded-full">{t}</span>
+                        <span key={idx} className="text-xs bg-gradient-to-r from-secondary to-secondary/80 px-3 py-1.5 rounded-full font-medium">{t}</span>
                       ))}
                     </div>
                   </div>
                 </CardContent>
-                <CardFooter>
-                  <Button onClick={() => scrollToSection('order')} className="w-full" size="lg">
+                <CardFooter className="bg-gray-50/50">
+                  <Button onClick={() => scrollToSection('order')} className="w-full shadow-md hover:shadow-lg transition-all" size="lg">
                     Заказать игру
                   </Button>
                 </CardFooter>
@@ -270,38 +280,38 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-6">О нас</h2>
+            <h2 className="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">О нас</h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-center text-muted-foreground mb-8">
+              <p className="text-lg text-center text-muted-foreground mb-12 leading-relaxed">
                 Мы создаём профессиональные бизнес-игры, которые помогают развивать реальные навыки через практику и вовлечение.
               </p>
               
               <div className="grid md:grid-cols-3 gap-8 mt-12">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="TrendingUp" size={32} className="text-accent" />
+                <div className="text-center group hover:scale-105 transition-transform duration-300">
+                  <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <Icon name="TrendingUp" size={36} className="text-accent" />
                   </div>
-                  <h3 className="font-semibold mb-2">Эффективность</h3>
-                  <p className="text-sm text-muted-foreground">Результаты видны сразу после первой игры</p>
+                  <h3 className="font-bold text-lg mb-2">Эффективность</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Результаты видны сразу после первой игры</p>
                 </div>
                 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Users" size={32} className="text-accent" />
+                <div className="text-center group hover:scale-105 transition-transform duration-300">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <Icon name="Users" size={36} className="text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Команда экспертов</h3>
-                  <p className="text-sm text-muted-foreground">Разработано практикующими специалистами</p>
+                  <h3 className="font-bold text-lg mb-2">Команда экспертов</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Разработано практикующими специалистами</p>
                 </div>
                 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Award" size={32} className="text-accent" />
+                <div className="text-center group hover:scale-105 transition-transform duration-300">
+                  <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <Icon name="Award" size={36} className="text-accent" />
                   </div>
-                  <h3 className="font-semibold mb-2">Качество</h3>
-                  <p className="text-sm text-muted-foreground">Премиальные материалы и продуманная механика</p>
+                  <h3 className="font-bold text-lg mb-2">Качество</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Премиальные материалы и продуманная механика</p>
                 </div>
               </div>
             </div>
@@ -309,23 +319,24 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="authors" className="py-20 bg-gray-50">
+      <section id="authors" className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Авторы и ведущие</h2>
-          <p className="text-center text-muted-foreground mb-12">Опытные бизнес-тренеры и коучи с международным признанием</p>
+          <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Авторы и ведущие</h2>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Опытные бизнес-тренеры и коучи с международным признанием</p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {authors.map((author, idx) => (
-              <Card key={idx} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Icon name="User" size={40} className="text-primary" />
+              <Card key={idx} className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg group">
+                <CardHeader className="relative">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-bl-full opacity-50"></div>
+                  <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                    <Icon name="User" size={48} className="text-white" />
                   </div>
                   <CardTitle className="text-2xl">{author.name}</CardTitle>
-                  <CardDescription className="text-accent font-medium">{author.title}</CardDescription>
+                  <CardDescription className="text-accent font-semibold text-base">{author.title}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{author.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">{author.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -333,15 +344,15 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="order" className="py-20 bg-white">
+      <section id="order" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-4">Форма заказа</h2>
-            <p className="text-center text-muted-foreground mb-12">
+            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Форма заказа</h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg">
               Заполните форму, и мы свяжемся с вами для уточнения деталей
             </p>
             
-            <Card>
+            <Card className="shadow-xl border-0">
               <CardContent className="pt-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
@@ -406,7 +417,7 @@ const Index = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button type="submit" size="lg" className="w-full shadow-lg hover:shadow-xl hover:scale-105 transition-all">
                     Отправить заявку
                   </Button>
                 </form>
@@ -416,38 +427,46 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">Контакты</h2>
-            <p className="text-xl mb-8 opacity-90">
+      <section id="contact" className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent)] opacity-50"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-5xl font-bold mb-6">Контакты</h2>
+            <p className="text-xl mb-12 opacity-90">
               Свяжитесь с нами любым удобным способом
             </p>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center gap-3">
-                <Icon name="Mail" size={32} />
-                <h3 className="font-semibold">Email</h3>
-                <a href="mailto:info@businessgames.ru" className="hover:underline opacity-90">info@businessgames.ru</a>
+              <div className="flex flex-col items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all hover:scale-105">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <Icon name="Mail" size={32} />
+                </div>
+                <h3 className="font-bold text-lg">Email</h3>
+                <a href="mailto:info@businessgames.ru" className="hover:underline">info@businessgames.ru</a>
               </div>
               
-              <div className="flex flex-col items-center gap-3">
-                <Icon name="Phone" size={32} />
-                <h3 className="font-semibold">Телефон</h3>
-                <a href="tel:+79999999999" className="hover:underline opacity-90">+7 (999) 999-99-99</a>
+              <div className="flex flex-col items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all hover:scale-105">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <Icon name="Phone" size={32} />
+                </div>
+                <h3 className="font-bold text-lg">Телефон</h3>
+                <a href="tel:+79999999999" className="hover:underline">+7 (999) 999-99-99</a>
               </div>
               
-              <div className="flex flex-col items-center gap-3">
-                <Icon name="MessageCircle" size={32} />
-                <h3 className="font-semibold">Telegram</h3>
-                <a href="https://t.me/businessgames" className="hover:underline opacity-90">@businessgames</a>
+              <div className="flex flex-col items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all hover:scale-105">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <Icon name="MessageCircle" size={32} />
+                </div>
+                <h3 className="font-bold text-lg">Telegram</h3>
+                <a href="https://t.me/businessgames" className="hover:underline">@businessgames</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-gray-900 text-white py-10">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm opacity-70">© 2025 Business Games Store. Все права защищены.</p>
         </div>
