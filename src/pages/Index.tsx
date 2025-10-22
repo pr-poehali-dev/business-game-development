@@ -42,7 +42,7 @@ const Index = () => {
     {
       id: 'factory',
       title: 'Фабрика игрушек',
-      price: 'По запросу',
+      price: '20 000 ₽',
       duration: '4 часа',
       participants: 'От 16 человек',
       description: 'Бизнес-игра, где 4 часа равны году из жизни компании. Результат за 20 минут – то, что в жизни занимает 3 месяца.',
@@ -64,7 +64,7 @@ const Index = () => {
     {
       id: 'oil',
       title: 'В поисках нефти',
-      price: 'По запросу',
+      price: '20 000 ₽',
       duration: '4 часа',
       participants: 'От 15 человек',
       description: 'Динамичная бизнес-симуляция, которая погружает участников в реалии нефтедобывающей компании. 4 квартала = 1 финансовый год компании.',
@@ -85,7 +85,7 @@ const Index = () => {
     {
       id: 'orange',
       title: 'Апельсиновый остров',
-      price: 'По запросу',
+      price: '20 000 ₽',
       duration: '1.5-2 часа',
       participants: '12 человек',
       description: 'Ролевая деловая игра на развитие навыков ведения переговоров, управления конфликтами и эмоциональным интеллектом в условиях ограниченных ресурсов.',
@@ -106,7 +106,7 @@ const Index = () => {
     {
       id: 'zavod',
       title: 'Завод',
-      price: 'По запросу',
+      price: '10 000 ₽',
       duration: '45-60 минут',
       participants: 'От 10 человек',
       description: 'Найдите единственное верное место для строительства завода, используя ограниченную информацию. 3 минуты на запоминание + 15 минут на решение.',
@@ -395,10 +395,10 @@ const Index = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="realtor">Счастливый Риэлтор (15 000 ₽)</SelectItem>
-                        <SelectItem value="factory">Фабрика игрушек (По запросу)</SelectItem>
-                        <SelectItem value="oil">В поисках нефти (По запросу)</SelectItem>
-                        <SelectItem value="orange">Апельсиновый остров (По запросу)</SelectItem>
-                        <SelectItem value="zavod">Завод (По запросу)</SelectItem>
+                        <SelectItem value="factory">Фабрика игрушек (20 000 ₽)</SelectItem>
+                        <SelectItem value="oil">В поисках нефти (20 000 ₽)</SelectItem>
+                        <SelectItem value="orange">Апельсиновый остров (20 000 ₽)</SelectItem>
+                        <SelectItem value="zavod">Завод (10 000 ₽)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
