@@ -157,7 +157,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-200/50 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-5">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold text-primary tracking-tight">BUSINESS GAMES STORE</h1>
+            <h1 className="text-xl font-bold text-primary tracking-tight">ИНТЕРАКТИВ</h1>
             <div className="hidden md:flex gap-8">
               <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">Главная</button>
               <button onClick={() => scrollToSection('catalog')} className="text-sm font-medium hover:text-accent transition-all hover:scale-105">Каталог игр</button>
@@ -177,10 +177,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)] opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="inline-block mb-6 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium animate-fade-in">
-              ✨ Профессиональное обучение через игру
-            </div>
-            <h2 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in leading-tight">
+            <h2 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in leading-tight mt-6">
               Бизнес-игры для развития команды
             </h2>
             <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
