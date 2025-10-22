@@ -440,7 +440,7 @@ const Index = () => {
                   <Icon name="Mail" size={32} />
                 </div>
                 <h3 className="font-bold text-lg">Email</h3>
-                <a href="mailto:info@businessgames.ru" className="hover:underline">info@businessgames.ru</a>
+                <a href="mailto:interaktiv@interakiv72.ru" className="hover:underline">interaktiv@interakiv72.ru</a>
               </div>
               
               <div className="flex flex-col items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all hover:scale-105">
@@ -448,7 +448,7 @@ const Index = () => {
                   <Icon name="Phone" size={32} />
                 </div>
                 <h3 className="font-bold text-lg">Телефон</h3>
-                <a href="tel:+79999999999" className="hover:underline">+7 (999) 999-99-99</a>
+                <a href="tel:+79068277444" className="hover:underline">+7 (906) 827-74-44</a>
               </div>
               
               <div className="flex flex-col items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all hover:scale-105">
@@ -456,7 +456,7 @@ const Index = () => {
                   <Icon name="MessageCircle" size={32} />
                 </div>
                 <h3 className="font-bold text-lg">Telegram</h3>
-                <a href="https://t.me/businessgames" className="hover:underline">@businessgames</a>
+                <a href="https://t.me/Elena_Filyushina" className="hover:underline">@Elena_Filyushina</a>
               </div>
             </div>
           </div>
@@ -465,7 +465,7 @@ const Index = () => {
 
       <footer className="bg-gray-900 text-white py-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm opacity-70">© 2025 Business Games Store. Все права защищены.</p>
+          <p className="text-sm opacity-70">© 2025 Интерактив. Все права защищены.</p>
         </div>
       </footer>
     </div>
